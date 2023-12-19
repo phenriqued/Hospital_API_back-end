@@ -18,7 +18,7 @@ public class DoctorController {
     private DoctorService service;
 
     @GetMapping
-    public ResponseEntity getAllDoctors(@PageableDefault(size = 5, sort = {"name"}) Pageable pageable){
+    public ResponseEntity getAllDoctors(@PageableDefault(size = 5, sort = {"userInformation.name"}) Pageable pageable){
         return ResponseEntity.ok().body(service.listAllDoctors(pageable));
     }
 
